@@ -27,14 +27,16 @@ class Cryptocurrency(NeuronModule):
             result = dict( )
 
             payload = {'fsym': self.currency, 'tsyms': self.target}
+            logger.debug(payload)
             response = requests.get('https://min-api.cryptocompare.com/data/price', params=payload)
 
             content = response.json()
-            result[self.target] = content[self.target]
+            result[self.currency] = dict()
+            result[self.currency][self.target] = content[self.target]
 
             logger.debug(result)
-
             self.say(result)
+
 
     def _is_parameters_ok(self):
         """

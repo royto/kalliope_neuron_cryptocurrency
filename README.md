@@ -21,9 +21,11 @@ See [https://min-api.cryptocompare.com/](https://min-api.cryptocompare.com/) to 
 
 #### Return Values
 
-| Name    | Description                                    | Type   | sample      |
-|---------|------------------------------------------------|--------|-------------|
-| target  | the converted price for the required currency  | Float  | 5361.82     |
+The return value is dynamic based on source and target currency.
+
+| Name    | Description                                                          | Type   | sample        |
+|---------|----------------------------------------------------------------------|--------|---------------|
+| currency | a dict containing thethe converted price for the required currency  | dict   | EUR : 5361.82 |
 
 #### Synapses example
 
@@ -35,11 +37,12 @@ See [https://min-api.cryptocompare.com/](https://min-api.cryptocompare.com/) to 
       - cryptocurrency:
           currency: "BTC"
           target: "EUR"
+          file_template: templates/bitcoin_euro.j2
 
 ```
 
-The template defined in the templates/diagral.j2
+The template defined in the templates/bitcoin_euro.j2
 
 ```jinja2
-Ouverture du portail
+The current price of bitcoin is {{ BTC["EUR"] }} euros
 ```

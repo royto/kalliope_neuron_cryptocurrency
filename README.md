@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-This neuron allows you to get cryptocurrency price in other currency
+This neuron allows you to get cryptocurrency price in other currency. It uses [cryptocompare.com](https://min-api.cryptocompare.com) to get data.
 
 ## Installation
 
